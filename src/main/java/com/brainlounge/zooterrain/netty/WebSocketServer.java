@@ -64,7 +64,7 @@ public class WebSocketServer {
                     .childHandler(new WebSocketServerInitializer(zkStateObserver));
 
             Channel ch = b.bind(port).sync().channel();
-            System.out.println("Zooterrain server started at port " + port + '.');
+            System.out.println("Zooterrain server started at port: http://localhost:" + port + '.');
 
             zkStateObserver.start();
             
@@ -81,10 +81,11 @@ public class WebSocketServer {
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         } else {
-            port = 8080;
+            port = 38080;
         }
 
-        final String zookeeperConnection = System.getProperty("zooterrain.conn");
+        //final String zookeeperConnection = System.getProperty("zooterrain.conn");
+        final String zookeeperConnection = "192.168.2.48:2181";
         if (zookeeperConnection == null) {
             System.err.println("please provide a zookeeper connection string in property 'zooterrain.conn'.");
             System.exit(-1);
