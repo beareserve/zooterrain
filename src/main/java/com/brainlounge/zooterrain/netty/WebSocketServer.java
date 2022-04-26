@@ -85,7 +85,8 @@ public class WebSocketServer {
         }
 
         //final String zookeeperConnection = System.getProperty("zooterrain.conn");
-        final String zookeeperConnection = "192.168.2.48:2181";
+        //final String zookeeperConnection = "192.168.2.48:2181";
+        final String zookeeperConnection = "192.168.100.80:2181";
         if (zookeeperConnection == null) {
             System.err.println("please provide a zookeeper connection string in property 'zooterrain.conn'.");
             System.exit(-1);
